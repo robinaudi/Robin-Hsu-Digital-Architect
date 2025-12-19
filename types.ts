@@ -1,76 +1,86 @@
-export type Language = 'en' | 'zh';
-export type Theme = 'light' | 'dark';
 
-export interface LocalizedText {
-  en: string;
-  zh: string;
-}
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+*/
+
+export type Theme = 'light' | 'dark' | 'professional' | 'modern' | 'hipster';
+export type Language = 'en' | 'zh';
 
 export interface ExperienceItem {
   id: string;
+  role: string;
   company: string;
-  role: LocalizedText;
   period: string;
-  description: LocalizedText;
-  techStack: string[];
-  achievements: LocalizedText[]; // Changed to array of localized text
-  type: 'full-time' | 'consulting';
+  highlights: string[];
+  stack: string;
 }
 
-export interface ServiceItem {
-  id: string;
-  title: LocalizedText;
-  description: LocalizedText;
-  icon: string;
+export interface MetricItem {
+    label: string;
+    value: string;
+    suffix: string;
+    desc: string;
 }
 
-export interface ProjectItem {
-  id: string;
-  title: LocalizedText;
-  category: string;
-  image: string;
-  description: LocalizedText;
-  tags: string[];
-  link?: string;
+export interface SkillCategory {
+  name: string;
+  skills: string[];
 }
 
-export interface LinkedInArticle {
-  id: string;
-  title: string;
-  excerpt: string;
-  date: string;
-  readCount: number;
-  url: string;
-  isFeatured: boolean;
-  imageUrl?: string;
+export interface UIStrings {
+  nav: {
+    about: string;
+    experience: string;
+    expertise: string;
+    contact: string;
+    admin: string;
+  };
+  headings: {
+    keyAchievements: string;
+    technicalExpertise: string;
+    expertiseSubtitle: string;
+    credentials: string;
+    education: string;
+    educationSubtitle: string;
+    contact: string;
+    contactSubtitle: string;
+  };
+  footer: {
+    rights: string;
+  };
 }
 
-export interface PersonalProfile {
-  name: LocalizedText;
-  title: LocalizedText;
-  tagline: LocalizedText;
-  yearsExperience: number;
-  about: LocalizedText[];
-  phone: string;
-  email: string;
-  linkedin: string;
-  certifications: { name: string; issuer: string }[];
+export interface ContentData {
+  hero: {
+    name: string;
+    nameZh: string;
+    title: string;
+    subtitle: string;
+    cta: string;
+  };
+  about: {
+    title: string;
+    quote: string;
+    summary: string;
+    points: string[];
+  };
+  metrics: MetricItem[];
+  skills: SkillCategory[];
+  experience: {
+    title: string;
+    subtitle: string;
+    items: ExperienceItem[];
+  };
+  contact: {
+    title: string;
+    subtitle: string;
+    emailBtn: string;
+  };
+  ui: UIStrings;
 }
 
-export interface AppState {
-  lang: Language;
-  theme: Theme;
-  isAdmin: boolean;
-  profile: PersonalProfile;
-  services: ServiceItem[];
-  experience: ExperienceItem[];
-  projects: ProjectItem[];
-}
-
-export interface AppContextType extends AppState {
-  setLang: (lang: Language) => void;
-  toggleTheme: () => void;
-  login: (code: string) => boolean;
-  logout: () => void;
-  updateProfile: (key: keyof PersonalProfile, value: any) => void;
+export interface LocalizedContent {
+  en: ContentData;
+  zh: ContentData;
 }
