@@ -21,9 +21,10 @@ export const initialContent: LocalizedContent = {
         technicalExpertise: "Technical Expertise",
         expertiseSubtitle: "20+ Years of hands-on and managerial experience.",
         credentials: "Credentials",
-        education: "Education & Certifications",
+        education: "Education",
         educationSubtitle: "Continuous learning and professional validation.",
-        contact: "Ready to Collaborate?",
+        teaching: "Teaching Experience",
+        contact: "Ready to Collaborate?", // This remains the UI string for the nav, but the section title comes from content.contact.title
         contactSubtitle: "Available for consulting, speaking engagements, and senior leadership roles."
       },
       footer: {
@@ -50,16 +51,16 @@ export const initialContent: LocalizedContent = {
       ]
     },
     metrics: [
-      { label: "Digitization & Optimization", value: "100M", suffix: "+ NTD/Yr", desc: "Optimized one-click logistics & automated processes" },
-      { label: "Efficiency Boost", value: "200", suffix: "%", desc: "ERP Finance module process automation" },
-      { label: "Team Growth", value: "80", suffix: "+", desc: "Managed large-scale R&D teams across regions" },
-      { label: "IT Cost Savings", value: "40", suffix: "%", desc: "SRE Implementation & Cloud Optimization" }
+      { label: "Digitization & Optimization", value: "100M", suffix: "+ NTD/Yr", desc: "Optimized one-click logistics & automated processes", progress: 99 },
+      { label: "Efficiency Boost", value: "200", suffix: "%", desc: "ERP Finance module process automation", progress: 95 },
+      { label: "Team Growth", value: "80", suffix: "+", desc: "Managed large-scale R&D teams across regions", progress: 85 },
+      { label: "IT Cost Savings", value: "40", suffix: "%", desc: "SRE Implementation & Cloud Optimization", progress: 80 }
     ],
     skills: [
       { name: "Leadership", skills: ["Team Building (80+)", "Agile/Scrum", "Strategic Planning", "Digital Transformation", "Cross-functional Integration"] },
-      { name: "Cloud & DevOps", skills: ["AWS", "GCP", "Azure", "SRE", "Docker/K8s", "CI/CD"] },
+      { name: "Cloud & Database", skills: ["Amazon Web Services (AWS)", "Google Cloud Platform (GCP)", "Oracle Cloud Infrastructure (OCI)", "ERP (Oracle NetSuite)", "CRM (salesforce)", "MS-SQL", "MySQL", "Oracle DB", "CRM/POS Integration"] },
       { name: "Development", skills: ["C#.NET", "React.js", "Node.js", "React Native", "ASP.NET Core"] },
-      { name: "Data & Systems", skills: ["Oracle NetSuite ERP", "MS-SQL", "Oracle DB", "CRM/POS Integration", "PowerAutomate"] }
+      { name: "AI Tools & Systems", skills: ["RPA (PowerAutomate)", "Google AI Ecosystem", "LCDP (OutSystems)", "NotebookLM", "Notion AI"] }
     ],
     experience: {
       title: "Experience",
@@ -105,8 +106,29 @@ export const initialContent: LocalizedContent = {
         }
       ]
     },
+    education: [
+        {
+            school: "Tamkang University",
+            degree: "M.B.A. (Master of Business Administration), Management Information Systems",
+            note: "Master Thesis Award of International Conference on Information Management (ICIM)"
+        },
+        {
+            school: "National Sun Yat-Sen University",
+            degree: "EMBA Master Credit Class, Institute of Human Resource Management",
+            note: "People Management and People Development"
+        }
+    ],
+    teaching: [
+        {
+            role: "Lecturer",
+            school: "Tamkang University",
+            period: "Feb 2021 - Sep 2022",
+            location: "Taiwan",
+            subject: "Presentation Skills"
+        }
+    ],
     contact: {
-      title: "Ready to Collaborate?",
+      title: "Business Mindset | Digital Transformation | Tech Background",
       subtitle: "Available for consulting, speaking engagements, and senior leadership roles.",
       emailBtn: "Email Me"
     }
@@ -125,8 +147,9 @@ export const initialContent: LocalizedContent = {
         technicalExpertise: "技術專長",
         expertiseSubtitle: "20 年以上實戰與管理經驗",
         credentials: "專業證照",
-        education: "學歷與證書",
+        education: "學歷",
         educationSubtitle: "持續進修與專業認證",
+        teaching: "教學經歷",
         contact: "準備好合作了嗎？",
         contactSubtitle: "提供顧問諮詢、演講邀約及高階管理職務洽談。"
       },
@@ -154,16 +177,16 @@ export const initialContent: LocalizedContent = {
       ]
     },
     metrics: [
-      { label: "電子化、流程優化", value: "1億", suffix: "+ 年省", desc: "優化一鍵寄送與自動化流程" },
-      { label: "效率提升", value: "200", suffix: "%", desc: "ERP 財務模組流程自動化" },
-      { label: "團隊成長", value: "80", suffix: "+", desc: "管理跨區域大型研發團隊" },
-      { label: "IT 成本節省", value: "40", suffix: "%", desc: "SRE 導入與雲端優化" }
+      { label: "電子化、流程優化", value: "1億", suffix: "+ 年省", desc: "優化一鍵寄送與自動化流程", progress: 99 },
+      { label: "效率提升", value: "200", suffix: "%", desc: "ERP 財務模組流程自動化", progress: 95 },
+      { label: "團隊成長", value: "80", suffix: "+", desc: "管理跨區域大型研發團隊", progress: 85 },
+      { label: "IT 成本節省", value: "40", suffix: "%", desc: "SRE 導入與雲端優化", progress: 80 }
     ],
     skills: [
       { name: "領導力", skills: ["團隊建立 (80+人)", "敏捷開發/Scrum", "策略規劃", "數位轉型", "跨部門整合"] },
-      { name: "雲端與維運", skills: ["AWS", "GCP", "Azure", "SRE", "Docker/K8s", "CI/CD"] },
+      { name: "Cloud & Database", skills: ["Amazon Web Services (AWS)", "Google Cloud Platform (GCP)", "Oracle Cloud Infrastructure (OCI)", "ERP (Oracle NetSuite)", "CRM (salesforce)", "MS-SQL", "MySQL", "Oracle DB", "CRM/POS Integration"] },
       { name: "軟體開發", skills: ["C#.NET", "React.js", "Node.js", "React Native", "ASP.NET Core"] },
-      { name: "數據與系統", skills: ["Oracle NetSuite ERP", "MS-SQL", "Oracle DB", "CRM/POS 整合", "PowerAutomate"] }
+      { name: "AI Tools & Systems", skills: ["RPA (PowerAutomate)", "Google AI 生態圈", "LCDP (OutSystems)", "NotebookLM", "Notion AI"] }
     ],
     experience: {
       title: "經歷",
@@ -209,8 +232,29 @@ export const initialContent: LocalizedContent = {
         }
       ]
     },
+    education: [
+        {
+            school: "淡江大學",
+            degree: "資訊管理研究所 碩士 (MBA)",
+            note: "ICIM 國際資訊管理研討會 碩士論文獎"
+        },
+        {
+            school: "國立中山大學",
+            degree: "人力資源管理研究所 EMBA 學分班",
+            note: "人員管理與發展 (People Management and People Development)"
+        }
+    ],
+    teaching: [
+        {
+            role: "講師 (Lecturer)",
+            school: "淡江大學 (Tamkang University)",
+            period: "2021年2月 - 2022年9月",
+            location: "台灣",
+            subject: "簡報技巧 (Presentation Skills)"
+        }
+    ],
     contact: {
-      title: "準備好合作了嗎？",
+      title: "商業思維 | 數位轉型 | 技術背景",
       subtitle: "提供顧問諮詢、演講邀約及高階管理職務洽談。",
       emailBtn: "聯絡我"
     }

@@ -21,11 +21,26 @@ export interface MetricItem {
     value: string;
     suffix: string;
     desc: string;
+    progress?: number;
 }
 
 export interface SkillCategory {
   name: string;
   skills: string[];
+}
+
+export interface EducationItem {
+    school: string;
+    degree: string;
+    note?: string;
+}
+
+export interface TeachingItem {
+    role: string;
+    school: string;
+    period: string;
+    location: string;
+    subject: string;
 }
 
 export interface UIStrings {
@@ -43,6 +58,7 @@ export interface UIStrings {
     credentials: string;
     education: string;
     educationSubtitle: string;
+    teaching: string;
     contact: string;
     contactSubtitle: string;
   };
@@ -55,7 +71,7 @@ export interface ContentData {
   hero: {
     name: string;
     nameZh: string;
-    experienceBadge: string; // Added field
+    experienceBadge: string;
     title: string;
     subtitle: string;
     cta: string;
@@ -73,6 +89,8 @@ export interface ContentData {
     subtitle: string;
     items: ExperienceItem[];
   };
+  education: EducationItem[];
+  teaching: TeachingItem[];
   contact: {
     title: string;
     subtitle: string;
