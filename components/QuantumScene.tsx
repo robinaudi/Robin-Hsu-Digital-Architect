@@ -3,38 +3,30 @@
  * SPDX-License-Identifier: Apache-2.0
 */
 
-import React, { useRef } from 'react';
+import React, { useRef, useMemo } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Float, Sphere, Stars, Environment, Points, PointMaterial, Grid } from '@react-three/drei';
 import * as THREE from 'three';
 
-// Augmented type definition to fix missing intrinsic elements for Three.js
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      group: any;
-      meshStandardMaterial: any;
-      ambientLight: any;
-    }
-  }
-}
-
 const ParticleField = () => {
   const ref = useRef<THREE.Points>(null);
-  const sphere = new Float32Array(5000 * 3);
   
-  // Create a random distribution in a sphere
-  for (let i = 0; i < 5000; i++) {
-    const r = 4 * Math.cbrt(Math.random());
-    const theta = Math.random() * 2 * Math.PI;
-    const phi = Math.acos(2 * Math.random() - 1);
-    const x = r * Math.sin(phi) * Math.cos(theta);
-    const y = r * Math.sin(phi) * Math.sin(theta);
-    const z = r * Math.cos(phi);
-    sphere[i * 3] = x;
-    sphere[i * 3 + 1] = y;
-    sphere[i * 3 + 2] = z;
-  }
+  const sphere = useMemo(() => {
+    const data = new Float32Array(5000 * 3);
+    // Create a random distribution in a sphere
+    for (let i = 0; i < 5000; i++) {
+        const r = 4 * Math.cbrt(Math.random());
+        const theta = Math.random() * 2 * Math.PI;
+        const phi = Math.acos(2 * Math.random() - 1);
+        const x = r * Math.sin(phi) * Math.cos(theta);
+        const y = r * Math.sin(phi) * Math.sin(theta);
+        const z = r * Math.cos(phi);
+        data[i * 3] = x;
+        data[i * 3 + 1] = y;
+        data[i * 3 + 2] = z;
+    }
+    return data;
+  }, []);
 
   useFrame((state, delta) => {
     if (ref.current) {
@@ -43,8 +35,10 @@ const ParticleField = () => {
     }
   });
 
+  const group = useMemo(() => new THREE.Group(), []);
+
   return (
-    <group rotation={[0, 0, Math.PI / 4]}>
+    <primitive object={group} rotation={[0, 0, Math.PI / 4]}>
       <Points ref={ref} positions={sphere} stride={3} frustumCulled={false}>
         <PointMaterial
           transparent
@@ -54,7 +48,7 @@ const ParticleField = () => {
           depthWrite={false}
         />
       </Points>
-    </group>
+    </primitive>
   );
 };
 
@@ -67,6 +61,7 @@ const ConnectingNode = ({ position, color }: { position: [number, number, number
     });
     return (
         <Sphere ref={ref} args={[0.1, 16, 16]} position={position}>
+            {/* @ts-ignore */}
             <meshStandardMaterial color={color} emissive={color} emissiveIntensity={2} />
         </Sphere>
     )
@@ -77,6 +72,7 @@ export const HeroScene: React.FC = () => {
   return (
     <div className="absolute inset-0 z-0 opacity-40 pointer-events-none">
       <Canvas camera={{ position: [0, 0, 5], fov: 60 }}>
+        {/* @ts-ignore */}
         <ambientLight intensity={0.5} />
         <ParticleField />
         <Environment preset="city" />
@@ -90,6 +86,7 @@ export const AbstractTechScene: React.FC = () => {
   return (
     <div className="w-full h-full absolute inset-0">
       <Canvas camera={{ position: [0, 0, 5], fov: 45 }}>
+        {/* @ts-ignore */}
         <ambientLight intensity={0.5} />
         <Float speed={2} rotationIntensity={0.5} floatIntensity={0.5}>
             <ConnectingNode position={[-2, 1, 0]} color="#C5A059" />
