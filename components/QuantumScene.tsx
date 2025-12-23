@@ -1,4 +1,3 @@
-
 /**
  * @license
  * SPDX-License-Identifier: Apache-2.0
@@ -8,6 +7,17 @@ import React, { useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Float, Sphere, Stars, Environment, Points, PointMaterial, Grid } from '@react-three/drei';
 import * as THREE from 'three';
+
+// Augmented type definition to fix missing intrinsic elements for Three.js
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      group: any;
+      meshStandardMaterial: any;
+      ambientLight: any;
+    }
+  }
+}
 
 const ParticleField = () => {
   const ref = useRef<THREE.Points>(null);

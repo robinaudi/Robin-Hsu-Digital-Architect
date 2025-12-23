@@ -109,7 +109,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ isOpen, onClose, content, 
                 
                 <div className="p-4 bg-gray-50 border-t border-gray-200 sticky bottom-0">
                     <button onClick={onClose} className="w-full flex items-center justify-center gap-2 bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors shadow-md">
-                        <Save size={18} /> Save & Close
+                        <Save size={18} /> Save & Close (Updates Cloud)
                     </button>
                 </div>
             </div>
