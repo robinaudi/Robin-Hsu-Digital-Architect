@@ -12,7 +12,7 @@ import { MetricItem, SkillCategory, UIStrings } from '../types';
 // --- IMPACT METRICS DIAGRAM ---
 export const ImpactMetrics: React.FC<{ metrics: MetricItem[], theme: string, ui: UIStrings }> = ({ metrics, theme, ui }) => {
   const colors = ["bg-green-500", "bg-blue-500", "bg-purple-500", "bg-yellow-500"];
-  const isDark = theme === 'dark' || theme === 'modern';
+  const isDark = theme === 'dark';
   const textColor = isDark ? 'text-white' : 'text-stone-900';
   const subTextColor = isDark ? 'text-gray-400' : 'text-stone-500';
 
@@ -54,7 +54,6 @@ export const ImpactMetrics: React.FC<{ metrics: MetricItem[], theme: string, ui:
 export const SkillsCloud: React.FC<{theme: string, skills: SkillCategory[], ui: UIStrings}> = ({theme, skills, ui}) => {
   const getIcon = (name: string) => {
       // Simple logic to match icons based on category index or name approximation
-      // In a real app, this mapping could be part of the content data or stricter enum
       if (name.includes("Leader") || name.includes("領導")) return <Users size={16} />;
       if (name.includes("Cloud") || name.includes("雲端")) return <Cloud size={16} />;
       if (name.includes("Development") || name.includes("軟體")) return <Server size={16} />;
@@ -62,7 +61,7 @@ export const SkillsCloud: React.FC<{theme: string, skills: SkillCategory[], ui: 
   }
 
   const [activeCategory, setActiveCategory] = useState(0);
-  const isDark = theme === 'dark' || theme === 'modern';
+  const isDark = theme === 'dark';
   const cardBg = isDark ? 'bg-white/5 border-white/10' : 'bg-[#F5F4F0] border-stone-200';
   const itemBg = isDark ? 'bg-white/10 border-white/5 text-gray-200' : 'bg-white border-stone-200 text-stone-700';
 

@@ -91,34 +91,3 @@ export const AbstractTechScene: React.FC = () => {
     </div>
   );
 }
-
-// NEW: Cyber Grid Scene for Modern Theme
-export const CyberGridScene: React.FC = () => {
-    return (
-        <div className="absolute inset-0 z-0 opacity-60 pointer-events-none">
-            <Canvas camera={{ position: [0, 5, 10], fov: 50 }}>
-                <color attach="background" args={['#000000']} />
-                <ambientLight intensity={1} />
-                <Stars radius={100} depth={50} count={3000} factor={4} saturation={1} fade speed={2} />
-                <Grid 
-                    position={[0, -2, 0]} 
-                    args={[20, 20]} 
-                    cellColor="#06b6d4" 
-                    sectionColor="#3b82f6" 
-                    fadeDistance={20}
-                    fadeStrength={1.5}
-                />
-                 <Float speed={4} rotationIntensity={1} floatIntensity={1}>
-                     <mesh position={[3, 1, -5]}>
-                         <torusKnotGeometry args={[1, 0.3, 100, 16]} />
-                         <meshStandardMaterial color="#06b6d4" wireframe />
-                     </mesh>
-                     <mesh position={[-3, 2, -2]}>
-                         <icosahedronGeometry args={[1, 1]} />
-                         <meshStandardMaterial color="#ec4899" wireframe />
-                     </mesh>
-                 </Float>
-            </Canvas>
-        </div>
-    )
-}
