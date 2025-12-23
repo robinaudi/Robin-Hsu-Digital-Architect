@@ -32,9 +32,10 @@ export const initialContent: LocalizedContent = {
     },
     hero: {
       name: "Robin Hsu",
-      nameZh: "徐秉暉",
-      title: "Senior Technology Executive",
-      subtitle: "Business Strategy • Technical Leadership",
+      nameZh: "", // Removed Chinese characters for EN version
+      experienceBadge: "20+ Years in Software & Tech Industry",
+      title: "E-commerce Director | CIO | HR VP | RD Manager",
+      subtitle: "Business Mindset | Digital Transformation | Tech Background",
       cta: "View Work"
     },
     about: {
@@ -49,10 +50,10 @@ export const initialContent: LocalizedContent = {
       ]
     },
     metrics: [
-      { label: "Cost Reduction", value: "100M", suffix: "+ NTD/Yr", desc: "Optimized one-click logistics & automated processes" },
+      { label: "Digitization & Optimization", value: "100M", suffix: "+ NTD/Yr", desc: "Optimized one-click logistics & automated processes" },
       { label: "Efficiency Boost", value: "200", suffix: "%", desc: "ERP Finance module process automation" },
-      { label: "IT Cost Savings", value: "40", suffix: "%", desc: "SRE Implementation & Cloud Optimization" },
-      { label: "Team Growth", value: "80", suffix: "+", desc: "Managed large-scale R&D teams across regions" }
+      { label: "Team Growth", value: "80", suffix: "+", desc: "Managed large-scale R&D teams across regions" },
+      { label: "IT Cost Savings", value: "40", suffix: "%", desc: "SRE Implementation & Cloud Optimization" }
     ],
     skills: [
       { name: "Leadership", skills: ["Team Building (80+)", "Agile/Scrum", "Strategic Planning", "Digital Transformation", "Cross-functional Integration"] },
@@ -75,7 +76,7 @@ export const initialContent: LocalizedContent = {
             "AI Integration: Introduced RPA reducing listing costs by 80%.",
             "Inventory Management: Optimized cross-platform allocation."
           ],
-          stack: "C#.NET, MS-SQL, AWS, GCP"
+          stack: "Digital Transformation, ERP Implementation, AI Integration, Org Management"
         },
         {
           id: "eztable",
@@ -88,7 +89,7 @@ export const initialContent: LocalizedContent = {
             "SRE Implementation: Reduced IT costs by 40%.",
             "B2B Backend: Solved high-traffic paralysis."
           ],
-          stack: "React.js, Node.JS, AWS"
+          stack: "React Native, React.js, Node.JS, AWS, Org Re-structuring"
         },
         {
           id: "tutorabc",
@@ -136,8 +137,9 @@ export const initialContent: LocalizedContent = {
     hero: {
       name: "Robin Hsu",
       nameZh: "徐秉暉",
-      title: "資深技術高管",
-      subtitle: "商業思維 • 技術領導",
+      experienceBadge: "20+ 年軟體科技與資訊產業經驗",
+      title: "電商總監 | CIO | HR VP | RD Manager",
+      subtitle: "商業思維 | 數位轉型 | 技術背景",
       cta: "查看經歷"
     },
     about: {
@@ -152,10 +154,10 @@ export const initialContent: LocalizedContent = {
       ]
     },
     metrics: [
-      { label: "成本降低", value: "1億", suffix: "+ 年省", desc: "優化一鍵寄送與自動化流程" },
+      { label: "電子化、流程優化", value: "1億", suffix: "+ 年省", desc: "優化一鍵寄送與自動化流程" },
       { label: "效率提升", value: "200", suffix: "%", desc: "ERP 財務模組流程自動化" },
-      { label: "IT 成本節省", value: "40", suffix: "%", desc: "SRE 導入與雲端優化" },
-      { label: "團隊成長", value: "80", suffix: "+", desc: "管理跨區域大型研發團隊" }
+      { label: "團隊成長", value: "80", suffix: "+", desc: "管理跨區域大型研發團隊" },
+      { label: "IT 成本節省", value: "40", suffix: "%", desc: "SRE 導入與雲端優化" }
     ],
     skills: [
       { name: "領導力", skills: ["團隊建立 (80+人)", "敏捷開發/Scrum", "策略規劃", "數位轉型", "跨部門整合"] },
@@ -178,7 +180,7 @@ export const initialContent: LocalizedContent = {
             "AI 導入：RPA 降低上架成本 80%，智能客服提升效率 50%。",
             "庫存管理：優化多平台配貨 (Momo, 蝦皮等)。"
           ],
-          stack: "C#.NET, MS-SQL, AWS, GCP"
+          stack: "數位轉型, ERP 導入, AI 整合, 組織管理"
         },
         {
           id: "eztable",
@@ -191,7 +193,7 @@ export const initialContent: LocalizedContent = {
             "SRE 導入：IT 費用節省 40%，維運節省 100%。",
             "B2B 後台：解決高流量系統癱瘓問題。"
           ],
-          stack: "React.js, Node.JS, AWS"
+          stack: "React Native, React.js, Node.JS, AWS, 組織重整"
         },
         {
           id: "tutorabc",

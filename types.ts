@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
 */
 
-export type Theme = 'light' | 'dark' | 'professional' | 'modern' | 'hipster';
+export type Theme = 'light' | 'dark' | 'professional' | 'hipster';
 export type Language = 'en' | 'zh';
 
 export interface ExperienceItem {
@@ -55,6 +55,7 @@ export interface ContentData {
   hero: {
     name: string;
     nameZh: string;
+    experienceBadge: string; // Added field
     title: string;
     subtitle: string;
     cta: string;
